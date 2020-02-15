@@ -1,9 +1,98 @@
 <ion-header>
   <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
     <ion-title>principal</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content id="main">
+  <ion-menu side="start" menuId="first" contentId="main">
+    <ion-header>
+      <ion-toolbar color="primary">
+        <ion-title>Start Menu</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <ion-list>
+        <ion-item>Menu Item</ion-item>
+        <ion-item>Menu Item</ion-item>
+        <ion-item>Menu Item</ion-item>
+        <ion-item>Menu Item</ion-item>
+        <ion-item>Menu Item</ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+  <!--<ion-router-outlet id="main"></ion-router-outlet>-->
+<ion-grid>
+  <ion-row>
+    <ion-col>
+      <ion-card>
+        <ion-card-content>
+          <ion-avatar>
+            <img src="../../assets/principal/psicologia.jpg"/>          
+          </ion-avatar>
+        <ion-label>Psicologia</ion-label>
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+    <ion-col>
+      <ion-card>
+        <ion-card-content>
+          <ion-avatar>
+            <img src="../../assets/principal/ing_sistemas.png"/>          
+          </ion-avatar>
+          <ion-label>Sistemas</ion-label>
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+  </ion-row>
 
+  <ion-row>
+    <ion-col>
+      <ion-card>
+        <ion-card-content>
+          <ion-avatar>
+            <img src="../../assets/principal/ing_industrial.jpg"/>          
+          </ion-avatar>
+          <ion-label>Industrial</ion-label>
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+    <ion-col>
+      <ion-card>
+        <ion-card-content>
+          <ion-avatar>
+            <img src="../../assets/principal/matematicas.png"/>          
+          </ion-avatar>
+          <ion-label>Matematicas</ion-label>
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col>
+      <ion-card>
+        <ion-card-content>
+          <ion-avatar>
+            <img src="../../assets/principal/mercadeo.png"/>          
+          </ion-avatar>
+          <ion-label>Mercadeo</ion-label>
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+    <ion-col>
+      <ion-card>
+        <ion-card-content>
+          <ion-avatar>
+            <img src="../../assets/principal/negocios.png"/>          
+          </ion-avatar>
+          <ion-label>Negocios</ion-label>
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+</ion-grid>
 </ion-content>
