@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AlertController, PickerController } from '@ionic/angular';
+import { AlertController, ActionSheetController } from '@ionic/angular';
 
 @Component({
   selector: 'app-configuracion',
@@ -9,15 +9,17 @@ import { AlertController, PickerController } from '@ionic/angular';
 
 export class ConfiguracionPage implements OnInit {
 
-  constructor(public alertController: AlertController, public pickerController:PickerController) { }
+  constructor(public alertController: AlertController, 
+    public actionSheetController:ActionSheetController) { }
 
-  public idioma : string = "Español";
-  public nombre : string = "Usuario";
-  public pass : string = "12345";
+  public idioma : string = "Español"; //variable que contiene el idioma
+  public nombre : string = "Usuario"; //variable que contiene el nombre de usuario
+  public pass : string = "12345"; //variable que contiene el password del usuario
 
   ngOnInit() {
   }
 
+  //metodo que permite al usuario cambiar de nombre
   async cambiarNombre(){
       const alert = await this.alertController.create({
         header: 'Cambiar nombre',
@@ -51,6 +53,7 @@ export class ConfiguracionPage implements OnInit {
     
   }
 
+  //metodo que permite al usuario cambiar su password
   async cambiarPassword(){
     const alert = await this.alertController.create({
       header: 'Cambiar contraseña',
@@ -88,7 +91,6 @@ export class ConfiguracionPage implements OnInit {
         }, {
           text: 'Ok',
           handler: (data) => {
-            console.log(data.newPass + "-" + data.newPassConfirm + "-" + data.oldPass);
             if(data.newPass === data.newPassConfirm && data.oldPass === this.pass){
               this.pass = data.newPass;
               console.log("Confirmed new password: " + data.newPass);
@@ -99,10 +101,10 @@ export class ConfiguracionPage implements OnInit {
         }
       ]
     });
-
     await alert.present();
   }
 
+  //Alerta que se muestra cuando no se pudo guardar el password
   async alertError(){
     const alert = await this.alertController.create({
       header: 'Alert',
@@ -113,6 +115,7 @@ export class ConfiguracionPage implements OnInit {
     await alert.present();
   }
 
+  //metodo que permite el cambio de idioma
   async cambiarIdioma() {
     const alert = await this.alertController.create({
       header: 'Radio',
@@ -152,62 +155,27 @@ export class ConfiguracionPage implements OnInit {
     await alert.present();
   }
 
-  async openPicker(numColumns = 1, numOptions = 5, columnOptions = defaultColumnOptions){
-    const picker = await this.pickerController.create({
-      columns: this.getColumns(numColumns, numOptions, columnOptions),
-      buttons: [
-        {
-          text: 'Cancel',
-          role: 'cancel'
-        },
-        {
-          text: 'Confirm',
-          handler: (value) => {
-            console.log(`Got Value ${value}`);
-          }
+  //metodo que permite el cambio de tamaño de fuente
+  async presentActionSheet() {
+    const actionSheet = await this.actionSheetController.create({
+      header: 'Tamaño',
+      buttons: [{
+        text: 'Pequeño',
+        handler: () => {
+          console.log('Pequeño clicked');
         }
-      ]
+      }, {
+        text: 'Mediano',
+        handler: () => {
+          console.log('Mediano clicked');
+        }
+      },{
+        text: 'Grande',
+        handler: () => {
+          console.log('Grande clicked');
+        }
+      }]
     });
-    await picker.present();
-  }
-
-  getColumns(numColumns, numOptions, columnOptions) {
-    let columns = [];
-    for (let i = 0; i < numColumns; i++) {
-      columns.push({
-        name: `col-${i}`,
-        options: this.getColumnOptions(i, numOptions, columnOptions)
-      });
-    }
-
-    return columns;
-  }
-
-  getColumnOptions(columnIndex, numOptions, columnOptions) {
-    let options = [];
-    for (let i = 0; i < numOptions; i++) {
-      options.push({
-        text: columnOptions[columnIndex][i % numOptions],
-        value: i
-      })
-    }
-
-    return options;
+    await actionSheet.present();
   }
 }
-
-const defaultColumnOptions = [  
-  [
-    10,
-    11,
-    12,
-    13,
-    14,
-    15,
-    16,
-    17,
-    18,
-    19,
-    20
-  ]
-]
