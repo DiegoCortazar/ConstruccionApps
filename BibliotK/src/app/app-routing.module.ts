@@ -8,6 +8,10 @@ const routes: Routes = [
     path: 'principal',
     loadChildren: () => import('./principal/principal.module').then( m => m.PrincipalPageModule)
   },
+  {
+    path: 'configuracion',
+    loadChildren: () => import('./configuracion/configuracion.module').then( m => m.ConfiguracionPageModule)
+  },
 ];
 
 @NgModule({

@@ -13,9 +13,33 @@ export class PrincipalPage implements OnInit {
   ngOnInit() {
   }
 
+  cardPsicologia(){
+    console.log("Psicologia clicked");
+  }
+
+  cardSistemas(){
+    console.log("Sistemas clicked");
+  }
+  cardIndustrial(){
+    console.log("Industrial clicked");
+  }
+  cardMatematicas(){
+    console.log("Metematicas clicked");
+  }
+  cardMercadeo(){
+    console.log("Mercadeo clicked");
+  }
+  cardNegocios(){
+    console.log("Negocios clicked");
+  }
+
   openFirst() {
     this.menu.enable(true, 'first');
     this.menu.open('first');
+  }
+
+  menuBotonConfiguracion(){
+    console.log("configuracion");
   }
 
 }
