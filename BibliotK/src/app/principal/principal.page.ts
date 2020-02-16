@@ -13,32 +13,44 @@ export class PrincipalPage implements OnInit {
   ngOnInit() {
   }
 
-  cardPsicologia(){
+  //Boton/Card de psicologia
+  cardPsicologia() {
     console.log("Psicologia clicked");
   }
 
-  cardSistemas(){
+  //Boton/Card de Sistemas
+  cardSistemas() {
     console.log("Sistemas clicked");
   }
-  cardIndustrial(){
+
+  //Boton/Card de industrial
+  cardIndustrial() {
     console.log("Industrial clicked");
   }
-  cardMatematicas(){
+
+  //Boton/Card de matematicas
+  cardMatematicas() {
     console.log("Metematicas clicked");
   }
-  cardMercadeo(){
+
+  //Boton/Card de mercadeo
+  cardMercadeo() {
     console.log("Mercadeo clicked");
   }
-  cardNegocios(){
+
+  //Boton/Card de negocios
+  cardNegocios() {
     console.log("Negocios clicked");
   }
 
+  //metodo que permite al menu lateral mostrarse
   openFirst() {
     this.menu.enable(true, 'first');
     this.menu.open('first');
   }
 
-  menuBotonConfiguracion(){
+  //Boton configuracion del menu lateral
+  menuBotonConfiguracion() {
     console.log("configuracion");
   }
 
