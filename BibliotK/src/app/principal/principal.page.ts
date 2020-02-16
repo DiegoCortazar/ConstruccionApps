@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuController } from '@ionic/angular';
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-principal',
@@ -8,7 +9,7 @@ import { MenuController } from '@ionic/angular';
 })
 export class PrincipalPage implements OnInit {
 
-  constructor(public menu: MenuController) { }
+  constructor(public menu: MenuController, public alertController: AlertController) { }
 
   ngOnInit() {
   }
@@ -53,5 +54,30 @@ export class PrincipalPage implements OnInit {
   menuBotonConfiguracion() {
     console.log("configuracion");
   }
+
+  async presentAlertDeseados() {
+    const alert = await this.alertController.create({
+      header: 'Alert',
+      subHeader: 'Redirigiendo a Deseados',
+      message: 'Deseados.',
+      buttons: ['OK']
+    });
+
+    await alert.present();
+  }
+
+  
+  async presentAlertFavoritos() {
+    const alert = await this.alertController.create({
+      header: 'Alert',
+      subHeader: 'Redirigiendo a Favoritos',
+      message: 'Favoritos',
+      buttons: ['OK']
+    });
+
+    await alert.present();
+  }
+ 
+ 
 
 }

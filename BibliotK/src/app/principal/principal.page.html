@@ -20,9 +20,9 @@
     <ion-content>
       <ion-list>
         <ion-item>Página Principal</ion-item>
-        <ion-item>Deseados</ion-item>
+        <ion-item button="true" (click)="presentAlertDeseados()">Deseados</ion-item>
         <ion-item href="historial">Historial</ion-item>
-        <ion-item>Libros Favoritos</ion-item>
+        <ion-item button="true" (click)="presentAlertFavoritos()">Libros Favoritos</ion-item>
         <ion-item href="configuracion">Configuracion</ion-item>
         <ion-item href="home">Salir</ion-item>
       </ion-list>
@@ -42,7 +42,7 @@
         </ion-card>
       </ion-col>
       <ion-col>
-        <ion-card button="true" (click)="cardSistemas()">
+        <ion-card href="sistemas" button="true" >
           <ion-card-content>
             <ion-avatar>
               <img src="../../assets/principal/ing_sistemas.png" />
