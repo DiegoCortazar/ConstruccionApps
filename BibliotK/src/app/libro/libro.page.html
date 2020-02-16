@@ -1,45 +1,68 @@
 <ion-header>
   <ion-toolbar>
+        <ion-buttons slot="start">
+          <ion-back-button defaultHref="principal"></ion-back-button>
+        </ion-buttons>
     <ion-title>Biblioteca</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <div class="row">
-    <div style="float:left" class=”col-xs-6″>
-
-      <img src="https://biblioteca.konradlorenz.edu.co/cgi-bin/koha/opac-image.pl?imagenumber=2081">
-
+  <ion-grid>
+  <ion-row>
+    <ion-col>
+      <div>
+        <img src="https://biblioteca.konradlorenz.edu.co/cgi-bin/koha/opac-image.pl?imagenumber=2081">  
+      </div>
+    </ion-col>
+    <ion-col>
+      <div>
+        <ion-list>
+          <ion-item>
+            <ion-label>
+              <h3>Nombre</h3>
+              <p>....</p>
+              <h3>Autor</h3>
+              <p>....</p>
+              <h3>Editorial</h3>
+              <p>....</p>
+              <h3>Paginas</h3>
+              <p>....</p>
+            </ion-label>
+          </ion-item>
+        </ion-list>        
     </div>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+      <div>
+        <ion-item>
+          <h4>Disponibilidad</h4>
+            <p>....</p>
+        </ion-item>
+      </div>
+    </ion-col>
+    <ion-row>
+    <ion-col>
+      <div>
+        <ion-item>
+        <h4>Tiempo restante</h4>
+        <p>....</p>
+      </ion-item>
+      </div>
+    </ion-col>
+  </ion-row>
+    <ion-row>
+      <div>
+        <ion-item>
+        <ion-button color="primary" (click)="agregarDeseados()">Agregar a Deseados</ion-button>
+    
+        <ion-button color="primary" (click)="agregarFavoritos()">Agregar a Favoritos</ion-button>
+      </ion-item>
+      </div>
 
-    <div style="float:left" class=”col-md-6″>
-    <ion-list>
-    <ion-item>
-      <ion-label>
-        <h3>Nombre</h3>
-        <p>....</p>
-        <h3>Autor</h3>
-        <p>....</p>
-        <h3>Editorial</h3>
-        <p>....</p>
-        <h3>Paginas</h3>
-        <p>....</p>
-      </ion-label>
-    </ion-item>
-  </ion-list>
-  
-  </div>
-  <div style="align-items: center;" class="row-md-12">
-    <ion-item>
-      <h3>Disponibilidad</h3>
-        <p>....</p>
-        <h3>Tiempo restante</h3>
-        <p>....</p>
-    </ion-item>
-    <ion-button color="primary">Agregar a Deseados</ion-button>
-
-    <ion-button color="primary">Agregar a Favoritos</ion-button>
-  </div>
-  </div>
-
+    </ion-row>
+  </ion-row>
+</ion-grid>
 </ion-content>

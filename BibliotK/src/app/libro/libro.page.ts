@@ -11,5 +11,12 @@ export class LibroPage implements OnInit {
 
   ngOnInit() {
   }
+  agregarFavoritos(){
+    alert("Libro agregado a Favoritos");
+  }
+  
 
+  agregarDeseados(){
+    alert("Libro agregado a Deseados");
+  }
 }
