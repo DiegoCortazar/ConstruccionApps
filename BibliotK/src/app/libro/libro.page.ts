@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { AlertController } from '@ionic/angular';
+
 @Component({
   selector: 'app-libro',
   templateUrl: './libro.page.html',
@@ -7,16 +9,37 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LibroPage implements OnInit {
 
-  constructor() { }
+  constructor(public alertController: AlertController) { }
 
   ngOnInit() {
   }
   agregarFavoritos(){
-    alert("Libro agregado a Favoritos");
+    this.presentAlertFavoritos();
+  }
+  async presentAlertFavoritos() {
+    const alert = await this.alertController.create({
+      header: 'Libro agregado a Favoritos.',
+      subHeader: '',
+      message: '',
+      buttons: ['OK']
+    });
+
+    await alert.present();
+  }
+
+  async presentAlertDeseados() {
+    const alert = await this.alertController.create({
+      header: 'Libro agregado a Deseados.',
+      subHeader: '',
+      message: '',
+      buttons: ['OK']
+    });
+
+    await alert.present();
   }
   
 
   agregarDeseados(){
-    alert("Libro agregado a Deseados");
+    this.presentAlertDeseados();
   }
 }
