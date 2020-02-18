@@ -1,7 +1,8 @@
 {
   "name": "BibliotK",
   "integrations": {
-    "capacitor": {}
+    "capacitor": {},
+    "cordova": {}
   },
   "type": "angular"
 }
