@@ -20,12 +20,12 @@
     <ion-content>
       <ion-list>
 
-        <ion-item button="true" (click)="presentAlertDeseados()">Libros Deseados</ion-item>
+        <ion-item button="true" (click)="presentAlertDeseados()"> <ion-icon name="heart-outline"></ion-icon> Libros Deseados</ion-item>
 
-        <ion-item button="true" (click)="presentAlertFavoritos()">Libros Favoritos</ion-item>
-        <ion-item href="historial">Historial</ion-item>
-        <ion-item href="configuracion">Configuración</ion-item>
-        <ion-item href="home">Salir</ion-item>
+        <ion-item button="true" (click)="presentAlertFavoritos()"> <ion-icon name="star-outline"></ion-icon> Libros Favoritos</ion-item>
+        <ion-item href="historial"> <ion-icon name="time-outline"></ion-icon> Historial</ion-item>
+        <ion-item href="configuracion"> <ion-icon name="settings-outline"></ion-icon> Configuración</ion-item>
+        <ion-item href="home"> <ion-icon name="exit-outline"></ion-icon> Salir</ion-item>
       </ion-list>
     </ion-content>
   </ion-menu>
